@@ -1,5 +1,5 @@
 :root {
-  --building-color1: #ac9fc7; 
+  --building-color1: #ac9fc7;
   --building-color2: #6e6691;
   --building-color3: #c798af;
   --building-color4: #728191;
@@ -13,16 +13,41 @@
   box-sizing: border-box;
 }
 
+/* font-family: 'Abyssinica SIL', serif;
+font-family: 'Alice', serif;
+font-family: 'Berkshire Swash', cursive;
+font-family: 'Cinzel', serif;
+font-family: 'Delius', cursive;
+font-family: 'EB Garamond', serif;
+font-family: 'Fredericka the Great', cursive;
+font-family: 'Great Vibes', cursive;
+font-family: 'Gugi', cursive;
+font-family: 'Henny Penny', cursive;
+font-family: 'Homemade Apple', cursive;
+font-family: 'IBM Plex Serif', serif;
+font-family: 'IM Fell English SC', serif;
+font-family: 'Julius Sans One', sans-serif;
+font-family: 'La Belle Aurore', cursive;
+font-family: 'Lemonada', cursive;
+font-family: 'Macondo', cursive;
+font-family: 'Old Standard TT', serif;
+font-family: 'Pinyon Script', cursive;
+font-family: 'Rubik Marker Hatch', cursive;
+font-family: 'Rubik Microbe', cursive;
+ */
+
 body {
   height: 100vh;
   margin: 0;
   overflow: hidden;
   position: relative;
+  font-family: 'Satisfy', cursive;
 }
 
 /* Clouds START */
 
-#clouds {
+.clouds-day {
+  height: 100%;
   padding: 100px 0;
   background: #c9dbe9;
   background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
@@ -35,11 +60,9 @@ body {
   width: 200px;
   height: 60px;
   background: #fff;
-
   border-radius: 200px;
   -moz-border-radius: 200px;
   -webkit-border-radius: 200px;
-
   position: relative;
 }
 
@@ -73,9 +96,9 @@ body {
 
 /*Time to animate*/
 .x1 {
-  -webkit-animation: moveclouds 15s linear infinite;
-  -moz-animation: moveclouds 15s linear infinite;
-  -o-animation: moveclouds 15s linear infinite;
+  -webkit-animation: moveclouds 30s linear infinite;
+  -moz-animation: moveclouds 30s linear infinite;
+  -o-animation: moveclouds 30s linear infinite;
 }
 
 /*variable speed, opacity, and position of clouds for realistic effect*/
@@ -90,9 +113,9 @@ body {
 
   /*Speed will also be proportional to the size and opacity*/
   /*More the speed. Less the time in 's' = seconds*/
-  -webkit-animation: moveclouds 25s linear infinite;
-  -moz-animation: moveclouds 25s linear infinite;
-  -o-animation: moveclouds 25s linear infinite;
+  -webkit-animation: moveclouds 50s linear infinite;
+  -moz-animation: moveclouds 50s linear infinite;
+  -o-animation: moveclouds 50s linear infinite;
 }
 
 .x3 {
@@ -105,9 +128,9 @@ body {
   opacity: 0.8;
   /*opacity proportional to the size*/
 
-  -webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
+  -webkit-animation: moveclouds 40s linear infinite;
+  -moz-animation: moveclouds 40s linear infinite;
+  -o-animation: moveclouds 40s linear infinite;
 }
 
 .x4 {
@@ -120,9 +143,9 @@ body {
   opacity: 0.75;
   /*opacity proportional to the size*/
 
-  -webkit-animation: moveclouds 18s linear infinite;
-  -moz-animation: moveclouds 18s linear infinite;
-  -o-animation: moveclouds 18s linear infinite;
+  -webkit-animation: moveclouds 32s linear infinite;
+  -moz-animation: moveclouds 32s linear infinite;
+  -o-animation: moveclouds 32s linear infinite;
 }
 
 .x5 {
@@ -135,14 +158,14 @@ body {
   opacity: 0.8;
   /*opacity proportional to the size*/
 
-  -webkit-animation: moveclouds 20s linear infinite;
-  -moz-animation: moveclouds 20s linear infinite;
-  -o-animation: moveclouds 20s linear infinite;
+  -webkit-animation: moveclouds 40s linear infinite;
+  -moz-animation: moveclouds 40s linear infinite;
+  -o-animation: moveclouds 40s linear infinite;
 }
 
 @-webkit-keyframes moveclouds {
   0% {
-    margin-left: 1000px;
+    margin-left: 120vw;
   }
 
   100% {
@@ -152,7 +175,7 @@ body {
 
 @-moz-keyframes moveclouds {
   0% {
-    margin-left: 1000px;
+    margin-left: 120vw;
   }
 
   100% {
@@ -162,7 +185,7 @@ body {
 
 @-o-keyframes moveclouds {
   0% {
-    margin-left: 1000px;
+    margin-left: 120vw;
   }
 
   100% {
@@ -177,6 +200,7 @@ body {
   height: 10vw;
   background-image: url(Giphs/BirdViolet.gif);
   background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   left: 85vw;
   bottom: 38vw;
@@ -188,10 +212,100 @@ body {
   height: 10vw;
   background-image: url(Giphs/BirdPink.gif);
   background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   left: 85vw;
   bottom: 38vw;
   z-index: 10;
+}
+
+
+.bat {
+  background-image: url(Giphs/Bat.gif);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+
+.bat-01 {
+  width: 10vw;
+  height: 10vw;
+  right: 88vw;
+  bottom: 24vw;
+  z-index: 10;
+  transform: scaleX(-1);
+filter:sepia(20%);
+}
+
+.bat-02 {
+  width: 10vw;
+  height: 10vw;
+  right: 62vw;
+  bottom: 32vw;
+  z-index: 10;
+  transform: rotate(-30deg) scaleX(-1);
+
+}
+
+.bat-03 {
+  width: 10vw;
+  height: 10vw;
+  right: 50vw;
+  bottom: 22vw;
+  z-index: 10;
+  transform: scale(0.7);
+  filter:sepia(40%);
+}
+
+.bat-04 {
+  width: 10vw;
+  height: 10vw;
+  left: 54vw;
+  bottom: 36vw;
+  z-index: 10;
+  transform: scale(0.7);
+  filter:saturate(180%)
+}
+
+.bat-05 {
+  width: 10vw;
+  height: 10vw;
+  left: 62vw;
+  bottom: 20vw;
+  z-index: 10;
+  transform: scale(0.5) scaleX(-1);
+  filter:saturate(180%)
+}
+
+.invisible {
+  opacity: 0;
+}
+
+.message-container {
+  background-image: url(Images/Clouds.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  position: absolute;
+  left: 61vw;
+  bottom: 30vw;
+  width: 30vw;
+  height: 13vw;
+  display: flex;
+  align-items: center;
+  transform: translatey(0px);
+  animation: float 3s ease-in-out infinite;
+}
+
+.message {
+  width: 60%;
+  height: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  margin-top: 2vw;
+  margin-left: 5.5vw;
+  font-size: 0.8vw;
 }
 
 .background-buildings,
@@ -217,7 +331,7 @@ body {
   justify-content: space-evenly;
 }
 
-.sky {
+.sun {
   z-index: 1;
   position: absolute;
   top: 1vw;
@@ -456,26 +570,67 @@ body {
       var(--window-color3) 30%);
 }
 
+/* Night Classes START */
+
 .night-pet {
   width: 10vw;
   height: 10vw;
   background-image: url(Giphs/Bat.gif);
   background-size: contain;
+  background-repeat: no-repeat;
   position: absolute;
   left: 85vw;
   bottom: 38vw;
   z-index: 10;
 }
 
-.night {
-  --building-color1: #000;
-  --building-color2: #000;
-  --building-color3: #000;
-  --building-color4: #000;
-  --window-color1: #777;
-  --window-color2: #777;
-  --window-color3: #777;
-  --window-color4: #777;
+.moon {
+  z-index: 1;
+  position: absolute;
+  top: 1vw;
+  left: 3vw;
+  width: 10vw;
+  height: 10vw;
+  background: radial-gradient(#f1f1f1, #f8f8f8 49%,
+      #f0f0f0 50%, transparent 70%,
+      transparent 100%);
+  cursor: pointer;
+}
+
+.clouds-night {
+  height: 100%;
+  padding: 100px 0;
+  background: #333333;
+  background: -webkit-linear-gradient(top, #333333 0%, rgb(167, 167, 167) 100%);
+  background: -linear-gradient(top, #333333 0%, rgb(167, 167, 167) 100%);
+  background: -moz-linear-gradient(top, #333333 0%, rgb(167, 167, 167) 100%);
+}
+
+/* Night Classes END */
+
+.lights-on {
+  background-color: rgb(245, 245, 208);
+  box-shadow: 0px 0px 1vw 0.2vw rgb(234, 234, 214);
+-webkit-box-shadow: 0px 0px 1vw 0.2vw rgb(234, 234, 214);
+-moz-box-shadow: 0px 0px 1vw 0.2vw rgb(234, 234, 214);
+}
+
+.window {
+  cursor: pointer;
 }
 
 
+/*Animations*/
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(20px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}

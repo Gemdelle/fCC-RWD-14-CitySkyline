@@ -4,16 +4,20 @@
 <head>
   <meta charset="UTF-8">
   <title>City Skyline</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E">
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Abyssinica+SIL&family=Alice&family=Berkshire+Swash&family=Cinzel&family=Delius&family=EB+Garamond&family=Fredericka+the+Great&family=Great+Vibes&family=Gugi&family=Henny+Penny&family=Homemade+Apple&family=IBM+Plex+Serif&family=IM+Fell+English+SC&family=Julius+Sans+One&family=La+Belle+Aurore&family=Lemonada&family=Macondo&family=Old+Standard+TT:ital@0;1&family=Pinyon+Script&family=Rubik+Marker+Hatch&family=Rubik+Microbe&family=Satisfy&family=Tangerine&family=Titillium+Web&display=swap"
+    rel="stylesheet">
   <link href="stylesPERSONAL.css" rel="stylesheet" />
 </head>
 
 <body>
-  
+
   <!-- Clouds START -->
 
-  <div id="clouds">
+  <div id="clouds" class="clouds-day">
     <div class="cloud x1"></div>
-    <!-- Time for multiple clouds to dance around -->
     <div class="cloud x2"></div>
     <div class="cloud x3"></div>
     <div class="cloud x4"></div>
@@ -23,9 +27,20 @@
 
   <!-- Clouds END -->
 
-  <div id="some-pet" class="pet"></div>
+  <div id="main-pet" class="pet"></div>
+  <div id="some-pet" class="bat bat-01 invisible"></div>
+  <div id="some-pet" class="bat bat-02 invisible"></div>
+  <div id="some-pet" class="bat bat-03 invisible"></div>
+  <div id="some-pet" class="bat bat-04 invisible"></div>
+  <div id="some-pet" class="bat bat-05 invisible"></div>
+  <div id="message" class="message-container">
+    <div id="pet-message" class="message">
+      <p>Welcome to CissyTales, my name is Lilleep. <br /> Drag the sun to the lower part of the screen and make it
+        nighttime in CissyTales. <br /> Don't bring it near me, it is too hot! </p>
+    </div>
+  </div>
 
-  <div class="sky"></div>
+  <div id="the-sun" class="sun"></div>
 
   <div class="background-buildings ">
     <div></div>
@@ -67,17 +82,17 @@
     <div class="fb2">
       <div class="fb2a"></div>
       <div class="fb2b window-wrap">
-        <div class="fb2-window"></div>
-        <div class="fb2-window"></div>
-        <div class="fb2-window"></div>
+        <div class="fb2-window window"></div>
+        <div class="fb2-window window"></div>
+        <div class="fb2-window window"></div>
       </div>
     </div>
     <div></div>
     <div class="fb3 building-wrap">
       <div class="fb3a window-wrap">
-        <div class="fb3-window"></div>
-        <div class="fb3-window"></div>
-        <div class="fb3-window"></div>
+        <div class="fb3-window window"></div>
+        <div class="fb3-window window"></div>
+        <div class="fb3-window window"></div>
       </div>
       <div class="fb3b"></div>
       <div class="fb3a"></div>
@@ -86,12 +101,12 @@
     <div class="fb4">
       <div class="fb4a"></div>
       <div class="fb4b">
-        <div class="fb4-window"></div>
-        <div class="fb4-window"></div>
-        <div class="fb4-window"></div>
-        <div class="fb4-window"></div>
-        <div class="fb4-window"></div>
-        <div class="fb4-window"></div>
+        <div class="fb4-window window"></div>
+        <div class="fb4-window window"></div>
+        <div class="fb4-window window"></div>
+        <div class="fb4-window window"></div>
+        <div class="fb4-window window"></div>
+        <div class="fb4-window window"></div>
       </div>
     </div>
     <div class="fb5"></div>
@@ -100,7 +115,7 @@
     <div></div>
   </div>
   <script src="cityskyline.js" />
-  
+
 </body>
 
 </html>
