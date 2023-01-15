@@ -1,0 +1,481 @@
+:root {
+  --building-color1: #ac9fc7; 
+  --building-color2: #6e6691;
+  --building-color3: #c798af;
+  --building-color4: #728191;
+  --window-color1: #d1c1f1;
+  --window-color2: #9891b6;
+  --window-color3: #e4c7d6;
+  --window-color4: #b7c4d1;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+/* Clouds START */
+
+#clouds {
+  padding: 100px 0;
+  background: #c9dbe9;
+  background: -webkit-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  background: -linear-gradient(top, #c9dbe9 0%, #fff 100%);
+  background: -moz-linear-gradient(top, #c9dbe9 0%, #fff 100%);
+}
+
+/*Time to finalise the cloud shape*/
+.cloud {
+  width: 200px;
+  height: 60px;
+  background: #fff;
+
+  border-radius: 200px;
+  -moz-border-radius: 200px;
+  -webkit-border-radius: 200px;
+
+  position: relative;
+}
+
+.cloud:before,
+.cloud:after {
+  content: '';
+  position: absolute;
+  background: #fff;
+  width: 100px;
+  height: 80px;
+  position: absolute;
+  top: -15px;
+  left: 10px;
+
+  border-radius: 100px;
+  -moz-border-radius: 100px;
+  -webkit-border-radius: 100px;
+
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  -moz-transform: rotate(30deg);
+}
+
+.cloud:after {
+  width: 120px;
+  height: 120px;
+  top: -55px;
+  left: auto;
+  right: 15px;
+}
+
+/*Time to animate*/
+.x1 {
+  -webkit-animation: moveclouds 15s linear infinite;
+  -moz-animation: moveclouds 15s linear infinite;
+  -o-animation: moveclouds 15s linear infinite;
+}
+
+/*variable speed, opacity, and position of clouds for realistic effect*/
+.x2 {
+  left: 200px;
+  z-index: 2;
+  -webkit-transform: scale(0.6);
+  -moz-transform: scale(0.6);
+  transform: scale(0.6);
+  opacity: 0.6;
+  /*opacity proportional to the size*/
+
+  /*Speed will also be proportional to the size and opacity*/
+  /*More the speed. Less the time in 's' = seconds*/
+  -webkit-animation: moveclouds 25s linear infinite;
+  -moz-animation: moveclouds 25s linear infinite;
+  -o-animation: moveclouds 25s linear infinite;
+}
+
+.x3 {
+  left: -250px;
+  top: -200px;
+  z-index: 2;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  /*opacity proportional to the size*/
+
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+.x4 {
+  left: 470px;
+  top: -250px;
+
+  -webkit-transform: scale(0.75);
+  -moz-transform: scale(0.75);
+  transform: scale(0.75);
+  opacity: 0.75;
+  /*opacity proportional to the size*/
+
+  -webkit-animation: moveclouds 18s linear infinite;
+  -moz-animation: moveclouds 18s linear infinite;
+  -o-animation: moveclouds 18s linear infinite;
+}
+
+.x5 {
+  left: -150px;
+  top: -150px;
+  z-index: 2;
+  -webkit-transform: scale(0.8);
+  -moz-transform: scale(0.8);
+  transform: scale(0.8);
+  opacity: 0.8;
+  /*opacity proportional to the size*/
+
+  -webkit-animation: moveclouds 20s linear infinite;
+  -moz-animation: moveclouds 20s linear infinite;
+  -o-animation: moveclouds 20s linear infinite;
+}
+
+@-webkit-keyframes moveclouds {
+  0% {
+    margin-left: 1000px;
+  }
+
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+@-moz-keyframes moveclouds {
+  0% {
+    margin-left: 1000px;
+  }
+
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+@-o-keyframes moveclouds {
+  0% {
+    margin-left: 1000px;
+  }
+
+  100% {
+    margin-left: -1000px;
+  }
+}
+
+/* Clouds END */
+
+.pet {
+  width: 10vw;
+  height: 10vw;
+  background-image: url(Giphs/BirdViolet.gif);
+  background-size: contain;
+  position: absolute;
+  left: 85vw;
+  bottom: 38vw;
+  z-index: 10;
+}
+
+.pet-right {
+  width: 10vw;
+  height: 10vw;
+  background-image: url(Giphs/BirdPink.gif);
+  background-size: contain;
+  position: absolute;
+  left: 85vw;
+  bottom: 38vw;
+  z-index: 10;
+}
+
+.background-buildings,
+.foreground-buildings {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  position: absolute;
+  top: 0;
+}
+
+.building-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.window-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.sky {
+  z-index: 1;
+  position: absolute;
+  top: 1vw;
+  left: 3vw;
+  width: 10vw;
+  height: 10vw;
+  background: radial-gradient(#f4f5de, #fdfde9 49%,
+      #f8f8e6 50%, transparent 70%,
+      transparent 100%);
+  cursor: pointer;
+}
+
+/* BACKGROUND BUILDINGS - "bb" stands for "background building" */
+.bb1 {
+  width: 10%;
+  height: 70%;
+}
+
+.bb1a {
+  width: 70%;
+}
+
+.bb1b {
+  width: 80%;
+}
+
+.bb1c {
+  width: 90%;
+}
+
+.bb1d {
+  width: 100%;
+  height: 70%;
+  background: linear-gradient(var(--building-color1) 50%,
+      var(--window-color1));
+}
+
+.bb1-window {
+  height: 10%;
+  background: linear-gradient(var(--building-color1),
+      var(--window-color1));
+}
+
+.bb2 {
+  width: 10%;
+  height: 50%;
+}
+
+.bb2a {
+  border-bottom: 5vh solid var(--building-color2);
+  border-left: 5vw solid transparent;
+  border-right: 5vw solid transparent;
+}
+
+.bb2b {
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(var(--building-color2),
+      var(--building-color2) 6%,
+      var(--window-color2) 6%,
+      var(--window-color2) 9%);
+}
+
+.bb3 {
+  width: 10%;
+  height: 55%;
+  background: repeating-linear-gradient(90deg,
+      var(--building-color3),
+      var(--building-color3),
+      var(--window-color3) 15%);
+}
+
+.bb4 {
+  width: 11%;
+  height: 58%;
+}
+
+.bb4a {
+  width: 3%;
+  height: 10%;
+  background-color: var(--building-color4);
+}
+
+.bb4b {
+  width: 80%;
+  height: 5%;
+  background-color: var(--building-color4);
+}
+
+.bb4c {
+  width: 100%;
+  height: 85%;
+  background-color: var(--building-color4);
+}
+
+.bb4-window {
+  width: 18%;
+  height: 90%;
+  background-color: var(--window-color4);
+}
+
+/* FOREGROUND BUILDINGS - "fb" stands for "foreground building" */
+.fb1 {
+  width: 10%;
+  height: 60%;
+}
+
+.fb1a {
+  border-bottom: 7vh solid var(--building-color4);
+  border-left: 2vw solid transparent;
+  border-right: 2vw solid transparent;
+}
+
+.fb1b {
+  width: 60%;
+  height: 10%;
+  background-color: var(--building-color4);
+}
+
+.fb1c {
+  width: 100%;
+  height: 80%;
+  background: repeating-linear-gradient(90deg,
+      var(--building-color4),
+      var(--building-color4) 10%,
+      transparent 10%,
+      transparent 15%),
+    repeating-linear-gradient(var(--building-color4),
+      var(--building-color4) 10%,
+      var(--window-color4) 10%,
+      var(--window-color4) 90%);
+}
+
+.fb2 {
+  width: 10%;
+  height: 40%;
+}
+
+.fb2a {
+  width: 100%;
+  border-bottom: 10vh solid var(--building-color3);
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+}
+
+.fb2b {
+  width: 100%;
+  height: 75%;
+  background-color: var(--building-color3);
+}
+
+.fb2-window {
+  width: 22%;
+  height: 100%;
+  background-color: var(--window-color3);
+}
+
+.fb3 {
+  width: 10%;
+  height: 35%;
+}
+
+.fb3a {
+  width: 80%;
+  height: 15%;
+  background-color: var(--building-color1);
+}
+
+.fb3b {
+  width: 100%;
+  height: 35%;
+  background-color: var(--building-color1);
+}
+
+.fb3-window {
+  width: 25%;
+  height: 80%;
+  background-color: var(--window-color1);
+}
+
+.fb4 {
+  width: 8%;
+  height: 45%;
+  position: relative;
+  left: 10%;
+}
+
+.fb4a {
+  border-top: 5vh solid transparent;
+  border-left: 8vw solid var(--building-color1);
+}
+
+.fb4b {
+  width: 100%;
+  height: 89%;
+  background-color: var(--building-color1);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.fb4-window {
+  width: 30%;
+  height: 10%;
+  border-radius: 50%;
+  background-color: var(--window-color1);
+  margin: 10%;
+}
+
+.fb5 {
+  width: 10%;
+  height: 33%;
+  position: relative;
+  right: 10%;
+  background: repeating-linear-gradient(var(--building-color2),
+      var(--building-color2) 5%,
+      transparent 5%,
+      transparent 10%),
+    repeating-linear-gradient(90deg,
+      var(--building-color2),
+      var(--building-color2) 12%,
+      var(--window-color2) 12%,
+      var(--window-color2) 44%);
+}
+
+.fb6 {
+  width: 9%;
+  height: 38%;
+  background: repeating-linear-gradient(90deg,
+      var(--building-color3),
+      var(--building-color3) 10%,
+      transparent 10%,
+      transparent 30%),
+    repeating-linear-gradient(var(--building-color3),
+      var(--building-color3) 10%,
+      var(--window-color3) 10%,
+      var(--window-color3) 30%);
+}
+
+.night-pet {
+  width: 10vw;
+  height: 10vw;
+  background-image: url(Giphs/Bat.gif);
+  background-size: contain;
+  position: absolute;
+  left: 85vw;
+  bottom: 38vw;
+  z-index: 10;
+}
+
+.night {
+  --building-color1: #000;
+  --building-color2: #000;
+  --building-color3: #000;
+  --building-color4: #000;
+  --window-color1: #777;
+  --window-color2: #777;
+  --window-color3: #777;
+  --window-color4: #777;
+}
+
+
