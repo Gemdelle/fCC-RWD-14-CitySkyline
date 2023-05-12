@@ -1,3 +1,46 @@
+.my-style,
+.fcc-style {
+    height: 6vw;
+    width: 9vw;
+    background-image: url(Images/style-my.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    z-index: 999;
+}
+
+.my-style {
+    background-image: url(Images/style-my.png);
+    right: 3vw;
+    top: 0;
+}
+
+.fcc-style {
+    background-image: url(Images/style-fcc.png);
+    right: 3vw;
+    top: 4.5vw;
+}
+
+.my-style a, 
+.fcc-style a {
+    height: 100%;
+    width: 100%;
+    display: block;
+}
+
+.my-style:hover,
+.fcc-style:hover {
+    transform: scale(105%);
+    transition: all 300ms ease-in-out;
+}
+
+.my-style:not(:hover),
+.fcc-style:not(:hover) {
+    transform: scale(100%);
+    transition: all 300ms ease-in-out;
+}
+
 :root {
   --building-color1: #ac9fc7;
   --building-color2: #6e6691;
